@@ -1,20 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./registrationForm.module.css";
 function RegistrationForm() {
+  const [formVal,setformVal] = useState({
+    name: '',
+    username:'',
+    email:'',
+    mobile:'',
+    checkbox:false,
+  })
+  const [nameErr,setnameErr]=useState(false)
+  const[usernameErr,setusernameErr]= useState(false)
+  const[mailErr,setmailErr]=useState(false)
+  const[mobileErr,setmobileErr] = useState(false)
+  const[checkboxErr,setcheckboxErr] = useState(false)
+  const handleChange= (e)=>{
+    setformVal({...formVal,[e.target.name]:e.target.value})
+  }
+  const handleSubmit=(e)=>{
+    let valid =true
+    e.preventDefault()
+    if(!(formVal.name.trim().length>0)){
+      setnameErr(true)
+      valid=false
+    }else{
+      setnameErr(false)
+    }
+    if(!(formVal.username.trim().length>0)){
+      setusernameErr(true)
+      valid=false
+    }else{
+      setusernameErr(false)
+    }
+    if(!(formVal.email.trim().length>0)){
+      setmailErr(true)
+      valid=false
+    }else{
+      setmailErr(false)
+    }
+    if(!(formVal.mobile.trim().length>0)){
+      setmobileErr(true)
+      valid=false
+    }else{
+      setmobileErr(false)
+    }
+    if (!formVal.checkbox){
+      setcheckboxErr(true)
+      valid=false
+    }else{
+      setcheckboxErr(false)
+    }
+  }
   return (
-    <p className={styles.formcontainer}>
+    <div className={styles.formcontainer}>
       <div className={styles.superlogo}>Super app</div>
       <p>Create your account</p>
       <form>
-        <input type="text" name="name" placeholder="Name" required />
+        <input type="text" name="name" placeholder="Name" onChange={(e)=>handleChange(e)}/>
+        {
+          nameErr? <p className={styles.error} >Field is required</p> :<></>
+        }
         <input type="text" name="username" placeholder="Username" />
+        {
+          usernameErr? <p className={styles.error} >Field is required</p> :<></>
+        }
         <input type="email" name="email" placeholder="Email" />
-        <input type="text" inputMode="numeric" placeholder="Mobile" />
+        {
+          mailErr? <p className={styles.error} >Field is required</p> :<></>
+        }
+        <input type="text" inputMode="numeric" name='mobile' placeholder="Mobile" />
+        {
+          mobileErr? <p className={styles.error} >Field is required</p> :<></>
+        }
         <label>
-          <input type="checkbox" name="checkbox" /> Share my registration data
+          <input type="checkbox" name="checkbox" onChange={(e) =>
+              setformVal({
+                ...formVal,
+                [e.target.name]: e.target.checked,
+              })
+            } /> Share my registration data
           with Superapp
         </label>
-        <button type="submit">SIGN UP</button>
+        {
+          checkboxErr? <p className={styles.error} >Check this box if you want to proceed</p> : <></>
+        }
+        <button type="submit"onClick={((e)=>handleSubmit(e))} >SIGN UP</button>
         <footer>
           <p>
             By clicking on Sign up. you agree to Superapp{" "}
@@ -26,7 +95,7 @@ function RegistrationForm() {
           </p>
         </footer>
       </form>
-    </p>
+    </div>
   );
 }
 
