@@ -59,15 +59,15 @@ function RegistrationForm() {
         {
           nameErr? <p className={styles.error} >Field is required</p> :<></>
         }
-        <input type="text" name="username" placeholder="Username" />
+        <input type="text" name="username" placeholder="Username" onChange={(e)=>handleChange(e)}/>
         {
           usernameErr? <p className={styles.error} >Field is required</p> :<></>
         }
-        <input type="email" name="email" placeholder="Email" />
+        <input type="email" name="email" placeholder="Email" onChange={(e)=>handleChange(e)}/>
         {
           mailErr? <p className={styles.error} >Field is required</p> :<></>
         }
-        <input type="text" inputMode="numeric" name='mobile' placeholder="Mobile" />
+        <input type="text" inputMode="numeric" name='mobile' placeholder="Mobile" onChange={(e)=>handleChange(e)}/>
         {
           mobileErr? <p className={styles.error} >Field is required</p> :<></>
         }
