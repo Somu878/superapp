@@ -1,15 +1,17 @@
-import { useState } from 'react'
-import Registration from './pages/Registration'
-import './App.css'
+import { Routes, Route, Link } from "react-router-dom";
+import Registration from "./pages/Registration";
+import Genres from "./pages/Genres";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <Registration/>
+      <Routes>
+        <Route path="/" element={<Registration />} />
+        <Route path="/genres" element={<Genres />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

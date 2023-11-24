@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./registrationForm.module.css";
 function RegistrationForm() {
+  const navigate = useNavigate();
   const [formVal,setformVal] = useState({
     name: '',
     username:'',
@@ -48,6 +50,10 @@ function RegistrationForm() {
       valid=false
     }else{
       setcheckboxErr(false)
+    }
+    if(valid){
+      navigate("/genres")
+      // window.localStorage.setItem("registereData", JSON.stringify(formVal));
     }
   }
   return (
