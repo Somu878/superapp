@@ -1,8 +1,10 @@
 import React from 'react'
-
+import GenreCategry from '../components/genres/GenreCategry'
 function Genres() {
   return (
-    <div>Genres Page</div>
+    <div>
+        <GenreCategry/>
+    </div>
   )
 }
 

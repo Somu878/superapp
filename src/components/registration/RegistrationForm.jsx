@@ -52,8 +52,10 @@ function RegistrationForm() {
       setcheckboxErr(false)
     }
     if(valid){
+     setTimeout(() => {
       navigate("/genres")
       // window.localStorage.setItem("registereData", JSON.stringify(formVal));
+     }, 500);
     }
   }
   return (
