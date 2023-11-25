@@ -71,10 +71,9 @@ function GenreCategry() {
       <div className={styles.pickedcat}>
         <div className={styles.superapp}>Superapp</div>
         <p>Choose your entertainment category</p>
-        <div className={styles.caterror}>
-          {" "}
+        {/* <div className={styles.caterror}>
           ⚠ Minimum 3 categoies are required to proceed
-        </div>
+        </div> */}
       </div>
       <div className={styles.categories}>
         {genreData.map((item) => (

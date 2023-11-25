@@ -38,10 +38,10 @@ body {
     margin: 12px;
     padding: 10px;
     width: 90%;
-    max-width: 370px;
+    max-width: 375px;
     border-radius: 4px;
     color: white;
-    border: none;
+    border-color: transparent;
   }
   
   input[type="text"],
