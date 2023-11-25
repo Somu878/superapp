@@ -126,10 +126,11 @@ const CategoryCard = ({ data,categories,Setcategories }) => {
       style={{
         background: data.color,
         color: "white",
-        borderRadius: "10px",
+        borderRadius: "15px",
         padding: "7px",
         cursor:'pointer',
         border: `${selected ? "4px solid green" : "4px solid transparent"}`,
+        transition: 'border 0.2s ease-in-out',
       }}
       onClick={(e)=>handleClick(e)}
     >
