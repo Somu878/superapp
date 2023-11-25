@@ -34,8 +34,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
-    padding: 35px;
-    margin-top: 20px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-left: 50px;
 }
 .caterror{
     color: #FF0000;
