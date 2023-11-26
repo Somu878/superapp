@@ -78,6 +78,7 @@ function GenreCategry() {
     }
     else{
       setminErr(false)
+      window.localStorage.setItem("SelectedGenres", JSON.stringify([...categories]));
       setTimeout(()=>{
         navigate("/dashboard")
       },500)

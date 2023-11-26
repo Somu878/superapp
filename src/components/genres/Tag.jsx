@@ -21,7 +21,7 @@ function Tag({ data, setData }) {
         >
           {item}{" "}
           <span
-            style={{ paddingLeft: "30px", color: "#292929",}}
+            style={{ paddingLeft: "30px", color: "#292929" }}
             onClick={() => {
               const updatedData = data.filter((tag) => tag !== item);
               setData(updatedData);

@@ -54,7 +54,7 @@ function RegistrationForm() {
     if (valid) {
       setTimeout(() => {
         navigate("/genres");
-        // window.localStorage.setItem("registereData", JSON.stringify(formVal));
+        window.localStorage.setItem("SignupData", JSON.stringify(formVal));
       }, 500);
     }
   };
