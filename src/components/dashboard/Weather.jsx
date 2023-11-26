@@ -1,8 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import axios, { Axios } from 'axios'
 function Weather() {
+    const [weather,setWeather] = useState(false)
     const [time,setTime] = useState()
     const [date,setDate] = useState()
+    useEffect(() => {
+        const Weathernow = async () => {
+          try {
+            const response = await axios.get(
+              'http://api.weatherapi.com/v1/current.json?key=cf89e5d9bc6d40f7b6961234232611&q=India&aqi=no'
+            );
+            setWeather(response.data);
+          } catch (error) {
+            console.error('Error fetching weather:', error);
+          }
+        };
+        Weathernow();
+      }, []);
     useEffect(()=>{
         const date = new Date()
         var hrs = date.getHours()
@@ -43,6 +57,38 @@ function Weather() {
         }} >
             <span>{date}</span>
             <span>{time}</span>
+        </div>
+        <div>
+            {weather?(
+                <div style={{
+                    display:'flex',
+                    alignItems:'center',
+                    justifyContent:"space-around",
+                }}
+                >{''} <div>
+                    <img src={weather.current.condition.icon} style={{width:'80px',height:'80px'}} />
+                    <p style={{fontWeight:'510'}}>{weather.current.condition.text}</p>
+                </div>
+                <div>
+                    <p style={{
+                        fontSize:'50px',
+                        margin:'0'
+                    }}>
+                        <span>{weather.current.temp_c}</span>°C
+                    </p>
+                    <p>{weather.current.pressure_mb} mbar</p>
+                    <p style={{
+                        marginTop:'-20px',fontWeight:'510'
+                    }}>Pressure🌡</p>
+                </div>
+                <div>
+                    <p style={{marginTop:'5px'}}><span>{weather.current.wind_kph}</span> km/h</p>
+                    <p style={{marginTop:'-20px',fontWeight:'510'}}>Wind 🍃</p>
+                    <p><span>{weather.current.humidity}</span> %</p>
+                    <p style={{marginTop:'-20px',fontWeight:'510'}}>Humidty💧</p>
+                </div>
+                </div>
+            ):(<></>)}
         </div>
     </div>
   )
