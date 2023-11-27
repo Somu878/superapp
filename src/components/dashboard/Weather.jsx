@@ -42,7 +42,8 @@ function Weather() {
         width:"32.5vw",
         height:'22vh',
         background:'#101744',
-        borderRadius:'15px'
+        borderRadius:'15px',
+        marginTop:'18px'
     }}>
         <div style={{
             display:'flex',
@@ -67,18 +68,18 @@ function Weather() {
                 }}
                 >{''} <div>
                     <img src={weather.current.condition.icon} style={{width:'75px',height:'75px'}} />
-                    <p style={{fontWeight:'510',marginTop:'-18px'}}>{weather.current.condition.text}</p>
+                    <p style={{fontWeight:'510',marginTop:'-18px',textAlign:'center'}}>{weather.current.condition.text}</p>
                 </div>
                 <div>
                     <p style={{
-                        fontSize:'48px',
-                        margin:'0'
+                        fontSize:'40px',
+                        margin:'4px'
                     }}>
                         <span>{weather.current.temp_c}</span>°C
                     </p>
                     <p>{weather.current.pressure_mb} mbar</p>
                     <p style={{
-                        marginTop:'-20px',fontWeight:'510'
+                        marginTop:'-23px',fontWeight:'510'
                     }}>Pressure🌡</p>
                 </div>
                 <div>

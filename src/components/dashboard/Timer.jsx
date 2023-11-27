@@ -66,6 +66,7 @@ function Timer() {
         background:'#1E2343',
         width:'60vw',
         height:'27vh',
+        marginTop:'19px',
         borderRadius:'20px',
         display: "flex",
         boxSizing: "border-box",
@@ -102,7 +103,7 @@ function Timer() {
                     <img style={{width:'25px',height:'20px'}} onClick={decSecond} src={dec} alt="decrement" />
                     </div>
             </div>
-            <div style={{background:'#FF6A6A',width:'25vw',height: '34px',marginLeft:'77px',borderRadius:'20px'}} onClick={()=>setStartplaying((state)=>!state)} onDoubleClick={resetTimer} >{startPaying?<p>Pause</p>:<p>Start</p>}</div>
+            <div style={{background:'#FF6A6A',width:'25vw',height: '34px',marginLeft:'77px',borderRadius:'20px'}} onClick={()=>setStartplaying((state)=>!state)} onDoubleClick={resetTimer} >{startPaying?<p style={{cursor:'pointer'}} >Pause</p>:<p style={{cursor:'pointer'}}>Start</p>}</div>
         </div>
     </div> 
     
