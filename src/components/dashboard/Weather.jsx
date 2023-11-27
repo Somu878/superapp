@@ -8,7 +8,7 @@ function Weather() {
         const Weathernow = async () => {
           try {
             const response = await axios.get(
-              'http://api.weatherapi.com/v1/current.json?key=cf89e5d9bc6d40f7b6961234232611&q=India&aqi=no'
+              'http://api.weatherapi.com/v1/current.json?key=cf89e5d9bc6d40f7b6961234232611&q=Yanam&aqi=no'
             );
             setWeather(response.data);
           } catch (error) {
@@ -66,12 +66,12 @@ function Weather() {
                     justifyContent:"space-around",
                 }}
                 >{''} <div>
-                    <img src={weather.current.condition.icon} style={{width:'80px',height:'80px'}} />
-                    <p style={{fontWeight:'510'}}>{weather.current.condition.text}</p>
+                    <img src={weather.current.condition.icon} style={{width:'75px',height:'75px'}} />
+                    <p style={{fontWeight:'510',marginTop:'-18px'}}>{weather.current.condition.text}</p>
                 </div>
                 <div>
                     <p style={{
-                        fontSize:'50px',
+                        fontSize:'48px',
                         margin:'0'
                     }}>
                         <span>{weather.current.temp_c}</span>°C
@@ -88,7 +88,7 @@ function Weather() {
                     <p style={{marginTop:'-20px',fontWeight:'510'}}>Humidty💧</p>
                 </div>
                 </div>
-            ):(<></>)}
+            ):(<div style={{margin:'40px',fontSize:'25px',textAlign:'center'}}>Loading..Please wait</div>)}
         </div>
     </div>
   )

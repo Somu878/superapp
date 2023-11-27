@@ -9,7 +9,7 @@ function Profile() {
       style={{
         display: "flex",
         width: "30vw",
-        height: "33vh",
+        height: "29vh",
         borderRadius: "15px",
         background: "#5746EA",
         padding: "20px",
@@ -18,7 +18,7 @@ function Profile() {
     >
       <img
         style={{
-          height: "35vh",
+          height: "31vh",
           position: "relative",
           bottom: "0.5vh",
           width: "8vw",
