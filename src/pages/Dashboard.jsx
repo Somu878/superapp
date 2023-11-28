@@ -3,6 +3,7 @@ import Profile from '../components/dashboard/profile'
 import Weather from '../components/dashboard/weather'
 import Timer from '../components/dashboard/Timer'
 import Notes from '../components/dashboard/Notes'
+import News from '../components/dashboard/News'
 function Dashboard() {
   return (
     <div style={{padding:'50px'}}>
@@ -13,8 +14,9 @@ function Dashboard() {
         <Timer/>
         </div>
         <div><Notes/></div>
+        <div><News/></div>
     </div>
-    
+
     </div>
   )
 }

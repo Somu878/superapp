@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios, { Axios } from 'axios'
+import axios from 'axios'
 function Weather() {
     const [weather,setWeather] = useState(false)
     const [time,setTime] = useState()
