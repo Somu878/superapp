@@ -54,14 +54,14 @@ function Timer() {
       "0"
     )}:${String(seconds).padStart(2, "0")}`;
   }
-  const durationofTimer= sec + min * 60 + hr * 60 * 60
+  const durationofTimer = sec + min * 60 + hr * 60 * 60;
   // useEffect(()=>{console.log("triggered",hr,min,sec);},[hr,min,sec])
   function resetTimer() {
     setHr(0);
     setMin(0);
     setSec(0);
     audio.load();
-    setTimerKey((i)=>i+1)
+    setTimerKey((i) => i + 1);
   }
   function renderRemainingTime({ remainingTime }) {
     useEffect(() => {
@@ -69,9 +69,10 @@ function Timer() {
         setResetTimerFlag(true);
       }
     }, [remainingTime]);
-    return <div style={{ fontSize: "35px" }}>{TimeConversion(remainingTime)}</div>;
+    return (
+      <div style={{ fontSize: "35px" }}>{TimeConversion(remainingTime)}</div>
+    );
   }
-  
 
   return (
     <div
@@ -97,7 +98,7 @@ function Timer() {
           strokeWidth={10}
           key={timerKey}
           onComplete={() => {
-            audio.play()
+            audio.play();
             setTimeout(() => {
               setStartplaying(false);
               setResetTimerFlag(true);
