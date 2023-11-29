@@ -10,7 +10,7 @@ function News() {
       const getNews=async ()=>{
         try{
           const res=await axios.get("https://newsapi.org/v2/everything?q=Technology&apiKey=d9eeab569a2247de8983f8ac4b16cdbc")
-          setNews(res.data.articles[0]);
+          setNews(res.data.articles[9]);
         }
         catch(err){
           console.error("Error fetching the news",err);
@@ -43,7 +43,7 @@ function News() {
           background: "rgba(0, 0, 0, 0.74)",
           height: "20vh",
           width: "27.5vw",
-          top: "41vh",
+          top: "41.6vh",
           boxSizing: "border-box",
         }}>
           <div style={{
