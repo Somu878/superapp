@@ -3,8 +3,8 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import inc from "..//../assets/Vector.png";
 import dec from "..//../assets/Vector2.png";
 import music from "..//../assets/ringtone-126505 (mp3cut.net).mp3";
+const audio = new Audio(music);
 function Timer() {
-  const audio = new Audio(music);
   const [hr, setHr] = useState(0);
   const [min, setMin] = useState(0);
   const [sec, setSec] = useState(0);
@@ -55,7 +55,7 @@ function Timer() {
     )}:${String(seconds).padStart(2, "0")}`;
   }
   const durationofTimer= sec + min * 60 + hr * 60 * 60
-  useEffect(()=>{},[hr,min,sec])
+  // useEffect(()=>{console.log("triggered",hr,min,sec);},[hr,min,sec])
   function resetTimer() {
     setHr(0);
     setMin(0);
@@ -64,11 +64,14 @@ function Timer() {
     setTimerKey((i)=>i+1)
   }
   function renderRemainingTime({ remainingTime }) {
-    if (resetTimerFlag && remainingTime === 0) {
-      resetTimer();
-    }
+    useEffect(() => {
+      if (remainingTime === 0) {
+        setResetTimerFlag(true);
+      }
+    }, [remainingTime]);
     return <div style={{ fontSize: "35px" }}>{TimeConversion(remainingTime)}</div>;
   }
+  
 
   return (
     <div
@@ -94,10 +97,11 @@ function Timer() {
           strokeWidth={10}
           key={timerKey}
           onComplete={() => {
-            audio.play();
+            audio.play()
             setTimeout(() => {
               setStartplaying(false);
               setResetTimerFlag(true);
+              resetTimer();
             }, 6000);
           }}
         >
