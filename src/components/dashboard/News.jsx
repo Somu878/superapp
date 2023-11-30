@@ -10,7 +10,13 @@ function News() {
       const getNews=async ()=>{
         // const corsProxyUrl= 'https://cors-anywhere.herokuapp.com/'
         try{
-          const res=await axios.get(" https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=Technology&apiKey=d9eeab569a2247de8983f8ac4b16cdbc")
+          const res = await axios.get('https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=Technology&apiKey=d9eeab569a2247de8983f8ac4b16cdbc', {
+  headers: {
+    'Origin': 'http://localhost:5173', // Include your origin URL
+    // Additional headers if needed
+  },
+});
+
           setNews(res.data.articles[44]);
         }
         catch(err){
