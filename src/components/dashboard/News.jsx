@@ -10,8 +10,8 @@ function News() {
       const getNews=async ()=>{
         // const corsProxyUrl= 'https://cors-anywhere.herokuapp.com/'
         try{
-          const res=await axios.get("https://newsapi.org/v2/everything?q=Technology&apiKey=d9eeab569a2247de8983f8ac4b16cdbc")
-          setNews(res.data.articles[9]);
+          const res=await axios.get("/api/everything?q=Technology'")
+          setNews(res.data.articles[0]);
         }
         catch(err){
           console.error("Error fetching the news",err);
