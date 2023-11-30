@@ -17,7 +17,7 @@ app.use(
         '^/api': '/v2',
       },
     headers: {
-      'X-Api-Key': 'd9eeab569a2247de8983f8ac4b16cdbc',
+      'X-Api-Key': 'd9eeab569a2247de8983f8ac4b16cdbcs',
     },
   })
 );
