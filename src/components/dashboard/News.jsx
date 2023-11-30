@@ -10,8 +10,8 @@ function News() {
       const getNews=async ()=>{
         // const corsProxyUrl= 'https://cors-anywhere.herokuapp.com/'
         try{
-          const res=await axios.get("/api/everything?q=Technology")
-          setNews(res.data.articles[0]);
+          const res=await axios.get(" https://cors-anywhere.herokuapp.com/newsapi.org/v2/everything?q=Technology&apiKey=d9eeab569a2247de8983f8ac4b16cdbc")
+          setNews(res.data.articles[44]);
         }
         catch(err){
           console.error("Error fetching the news",err);
@@ -26,7 +26,7 @@ function News() {
   return (
     <div style={{width:'27.5vw',height:'86vh',color:'black',marginLeft:'-15px',background:'white',borderRadius:'20px'}}>
       
-        <img src={news.urlToImage} alt="jhs"  style={{ height: "55vh", borderTopLeftRadius: "20px",borderTopRightRadius:'20px', width: "27.5vw" }} />
+        <img src={news.urlToImage} alt="News image from api"  style={{ height: "55vh", borderTopLeftRadius: "20px",borderTopRightRadius:'20px', width: "27.5vw" }} />
         <div
         style={{
           fontSize: "17px",
