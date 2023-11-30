@@ -10,7 +10,7 @@ function News() {
       const getNews=async ()=>{
         // const corsProxyUrl= 'https://cors-anywhere.herokuapp.com/'
         try{
-          const res=await axios.get("/api/everything?q=Technology'")
+          const res=await axios.get("/api/everything?q=Technology")
           setNews(res.data.articles[0]);
         }
         catch(err){
