@@ -1,8 +1,12 @@
 import React from 'react'
 import profileImg from '..//assets/image 14.png'
+import Genrelist from '../components/movies/Genrelist'
+
 function Movies() {
+    const genres = JSON.parse(window.localStorage.getItem('SelectedGenres'))
   return (
-    <div style={{overflow:'visible'}}>
+    <div style={{overflow:'visible', width: "100vw",
+    minHeight: "100vh",maxHeight: "100vh",}}>
         <img style={{
             position:'absolute',
             top:'5vh',
@@ -20,7 +24,11 @@ function Movies() {
                 fontSize:'30px',
                 fontFamily:'var(--dmsans)'
             }}>Entertainment according to your choice</p>
-            
+            {
+                genres.map((item)=>(
+                    <Genrelist genre={item}/>
+                ))
+            }
     </div>
   )
 }
