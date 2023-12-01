@@ -10,7 +10,7 @@ function Genrelist({ genre }) {
         method: 'GET',
         url: `https://moviesdatabase.p.rapidapi.com/titles?genre=${genre}&year=2020`,
         headers: {
-          'X-RapidAPI-Key':Config.moviesApiKey,
+          'X-RapidAPI-Key':process.env.VITE_MOVIES_API_KEY,
           'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
         }
       };
@@ -28,6 +28,7 @@ function Genrelist({ genre }) {
 
   return (
     <>
+    <p>{import.meta.env.VITE_MOVIES_API_KEY}</p>
       <p style={{ overflowY: 'hidden' }}>{genre}</p>
       <div style={{ display: 'flex', overflow: 'hidden', marginLeft: '2vw' }}>
        {
