@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import Config from '../../keys';
 function Genrelist({ genre }) {
   const [genreList, setGenreList] = useState([]);
+//   const API_KEY = import.meta.env.VITE_MOVIES_API_KEY
+  console.log(import.meta.env.VITE_MOVIES_API_KEY)
   useEffect(() => {
     const options = {
         method: 'GET',
         url: `https://moviesdatabase.p.rapidapi.com/titles?genre=${genre}&year=2020`,
         headers: {
-          'X-RapidAPI-Key': 'd19e1263e3msh3991af654d5761fp11dbeejsn713a6d266677',
+          'X-RapidAPI-Key':Config.moviesApiKey,
           'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
         }
       };
