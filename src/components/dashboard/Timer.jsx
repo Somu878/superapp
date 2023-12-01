@@ -173,7 +173,7 @@ function Timer() {
             background: "#FF6A6A",
             width: "25vw",
             height: "34px",
-            marginLeft: "77px",
+            marginLeft: "70px",
             borderRadius: "20px",
           }}
           onClick={() => {
