@@ -16,6 +16,9 @@ app.use(
     pathRewrite: {
         '^/api': '/v2',
       },
+      onProxyRes: (proxyRes, req, res) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+      },
   })
 );
 const PORT = process.env.PORT || 3000;
