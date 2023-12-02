@@ -27,7 +27,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  /* overflow: hidden; */
+ overflow-x: hidden;
 
 }
 @media (prefers-color-scheme: light) {
