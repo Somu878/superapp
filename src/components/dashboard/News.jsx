@@ -10,8 +10,9 @@ function News() {
     useEffect(()=>{
       const getNews=async ()=>{
         try{
-          const res=await axios.get(`https:newsapi.org/v2/everything?q=India&apiKey=${API_KEY}`)
-          setNews(res.data.articles[30]);
+          const res=await axios.get(`http://localhost:3000/api/everything?q=Technology&apiKey=${API_KEY}`)
+          // const res=await axios.get('http://localhost:3000/api/everything?q=Technology')
+          setNews(res.data.articles[31]);
         }
         catch(err){
           console.error("Error fetching the news",err);
