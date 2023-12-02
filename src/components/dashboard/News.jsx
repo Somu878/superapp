@@ -6,11 +6,11 @@ function News() {
   const[getDate,setgetDate] =useState()
   const [getTime,setgetTime] =useState()
     const [news, setNews] =useState('')
+    const API_KEY = import.meta.env.VITE_NEWS_API_KEY
     useEffect(()=>{
       const getNews=async ()=>{
-        // const corsProxyUrl= 'https://cors-anywhere.herokuapp.com/'
         try{
-          const res=await axios.get("https:newsapi.org/v2/everything?q=India&apiKey=d9eeab569a2247de8983f8ac4b16cdbc")
+          const res=await axios.get(`https:newsapi.org/v2/everything?q=India&apiKey=${API_KEY}`)
           setNews(res.data.articles[30]);
         }
         catch(err){

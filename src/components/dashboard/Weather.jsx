@@ -4,11 +4,12 @@ function Weather() {
     const [weather,setWeather] = useState(false)
     const [time,setTime] = useState()
     const [date,setDate] = useState()
+    const API_KEY = import.meta.env.VITE_WEATHER_API_KEY
     useEffect(() => {
         const Weathernow = async () => {
           try {
             const response = await axios.get(
-              'http://api.weatherapi.com/v1/current.json?key=cf89e5d9bc6d40f7b6961234232611&q=Yanam&aqi=no'
+             `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Yanam&aqi=no`
             );
             setWeather(response.data);
           } catch (error) {
@@ -72,8 +73,8 @@ function Weather() {
                 </div>
                 <div>
                     <p style={{
-                        fontSize:'40px',
-                        margin:'4px'
+                        fontSize:'37px',
+                        margin:'5px',
                     }}>
                         <span>{weather.current.temp_c}</span>°C
                     </p>

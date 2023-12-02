@@ -13,7 +13,7 @@ function Dashboard() {
    }, 500);
   }
   return (
-    <div style={{padding:'50px'}}>
+    <div style={{padding:'50px',marginLeft:'20px'}}>
     <div style={{gap:'20px',display:'flex'}}>
         <div>
         <Profile/>

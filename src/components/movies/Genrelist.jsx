@@ -7,7 +7,7 @@ function Genrelist({ genre }) {
   useEffect(() => {
     const options = {
         method: 'GET',
-        url: `https://moviesdatabase.p.rapidapi.com/titles?genre=${genre}&year=2021`,
+        url: `https://moviesdatabase.p.rapidapi.com/titles?genre=${genre}&year=2022`,
         headers: {
           'X-RapidAPI-Key':import.meta.env.VITE_MOVIES_API_KEY,
           'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
@@ -17,7 +17,7 @@ function Genrelist({ genre }) {
       const fetchGenres= async ()=>{
         try {
             const response = await axios.request(options);
-            setGenreList(response.data.results.splice(4,4))
+            setGenreList(response.data.results.splice(2,4))
         } catch (error) {
             console.error(error);
         }
@@ -27,18 +27,18 @@ function Genrelist({ genre }) {
 
   return (
     <>
-      <p style={{ overflowY: 'hidden' }}>{genre}</p>
-      <div style={{ display: 'flex', overflow: 'hidden', marginLeft: '2vw' }}>
+      <p style={{ overflowY: 'hidden',marginLeft:'70px',fontSize:'25px',color:'#878787' }}>{genre}</p>
+      <div style={{ display: 'flex', overflow: 'hidden', marginLeft: '50px' ,marginBottom:'20px'}}>
        {
         genreList.map((item)=>{
             return (
-                <div style={{ width: "20vw", margin: "2vw" }}>
+                <div style={{ width: "25vw",margin:'5px' }}>
                 <img style={{
                   objectFit: "cover",
                   width: "20vw",
-                  height: "15vh",
+                  height: "18vh",
                   borderRadius: "12px",
-                }} src={item?.primaryImage?.url} alt="imga" />
+                }} src={item?.primaryImage?.url} alt="title image" />
                 </div>
             )
         })

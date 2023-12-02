@@ -20,9 +20,9 @@ function Movies() {
              margin:'30px',
             fontFamily:'var(--singleday)'}}>Superapp</p>
             <p style={{
-                marginLeft:'60px',
+                marginLeft:'55px',
                 fontSize:'30px',
-                fontFamily:'var(--dmsans)'
+                fontFamily:'monospace'
             }}>Entertainment according to your choice</p>
             {
                 genres.map((item)=>(
