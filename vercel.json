@@ -1,9 +1,4 @@
     {
-        "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }],
-        "rewrites": [
-            {
-                "source": "/api/(.*)",
-                "destination": "https://newsapi.org"
-            }]
+        "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
     }
     
