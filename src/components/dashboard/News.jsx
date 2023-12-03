@@ -10,7 +10,7 @@ function News() {
     useEffect(()=>{
       const getNews=async ()=>{
         try{
-          const res=await axios.get(`http://localhost:3000/api/everything?q=Technology&apiKey=${API_KEY}`)
+          const res=await axios.get(`/api/everything?q=Technology&apiKey=${API_KEY}`)
           // const res=await axios.get('http://localhost:3000/api/everything?q=Technology')
           setNews(res.data.articles[31]);
         }
@@ -44,9 +44,9 @@ function News() {
       <div style={{
           position: "absolute",
           background: "rgba(0, 0, 0, 0.74)",
-          height: "20vh",
+          height: "16vh",
           width: "27.5vw",
-          top: "41.6vh",
+          top: "45vh",
           boxSizing: "border-box",
         }}>
           <div style={{
