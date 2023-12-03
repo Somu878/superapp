@@ -10,7 +10,7 @@ function News() {
     useEffect(()=>{
       const getNews=async ()=>{
         try{
-          const res=await axios.get(`/api/everything?q=Technology&apiKey=${API_KEY}`)
+          const res=await axios.get(`api/everything?q=Technology&apiKey=${API_KEY}`)
           // const res=await axios.get('http://localhost:3000/api/everything?q=Technology')
           setNews(res.data.articles[31]);
         }
