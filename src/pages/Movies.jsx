@@ -6,7 +6,7 @@ function Movies() {
     const genres = JSON.parse(window.localStorage.getItem('SelectedGenres'))
   return (
     <div style={{overflow:'visible', width: "100vw",
-    minHeight: "100vh",maxHeight: "100vh",}}>
+    minHeight: "100vh",maxHeight: "100vh"}}>
         <img style={{
             position:'absolute',
             top:'5vh',

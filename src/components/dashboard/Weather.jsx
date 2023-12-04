@@ -68,7 +68,7 @@ function Weather() {
                     justifyContent:"space-around",
                 }}
                 >{''} <div>
-                    <img src={weather.current.condition.icon} style={{width:'75px',height:'75px'}} />
+                    <img src={weather.current.condition.icon} style={{width:'75px',height:'75px',marginBottom:'13px'}} />
                     <p style={{fontWeight:'510',marginTop:'-18px',textAlign:'center'}}>{weather.current.condition.text}</p>
                 </div>
                 <div>
@@ -90,7 +90,7 @@ function Weather() {
                     <p style={{marginTop:'-20px',fontWeight:'510'}}>Humidty💧</p>
                 </div>
                 </div>
-            ):(<div style={{margin:'40px',fontSize:'25px',textAlign:'center'}}>Loading..Please wait</div>)}
+            ):(<div style={{margin:'40px',fontSize:'25px',textAlign:'center'}}>Fetching..Please wait</div>)}
         </div>
     </div>
   )
