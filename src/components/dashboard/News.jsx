@@ -9,11 +9,10 @@ function News() {
     const API_KEY = import.meta.env.VITE_NEWS_API_KEY
     useEffect(()=>{
       const getNews=async ()=>{
-        const url = 'https://corsproxy.io/?' + encodeURIComponent(`https://newsapi.org/v2/everything?q=technology&apiKey=${API_KEY}`);
         try{
-          const res=await axios.get(url)
+          const res=await axios.get(`/api/everything?q=Technology&apiKey=${API_KEY}`)
           // const res=await axios.get('http://localhost:3000/api/everything?q=Technology')
-          setNews(res.data.articles[29]);
+          setNews(res.data.articles[31]);
         }
         catch(err){
           console.error("Error fetching the news",err);
