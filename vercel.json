@@ -1,13 +1,4 @@
-{
-  "routes": [
     {
-      "src": "^/api/(.*)",
-      "dest": "http://localhost:3000"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1",
-      "status": 200
+        "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
     }
-  ]
-}
+    
