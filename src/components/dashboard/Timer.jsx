@@ -70,7 +70,7 @@ function Timer() {
       }
     }, [remainingTime]);
     return (
-      <div style={{ fontSize: "35px" }}>{TimeConversion(remainingTime)}</div>
+      <div style={{ fontSize: "30px" }}>{TimeConversion(remainingTime)}</div>
     );
   }
 

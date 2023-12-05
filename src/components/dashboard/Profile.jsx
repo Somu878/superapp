@@ -14,6 +14,7 @@ function Profile() {
         background: "#5746EA",
         padding: "20px",
         gap: "30px",
+        overflow:'hidden'
       }}
     >
       <img
@@ -66,22 +67,22 @@ function Tags({Genre}) {
         marginTop: "10px",
         width: "26vw",
         height: "18vh",
-  
+        overflowY:'scroll',
       }}
     >
       {Genre.map((item)=>(
         <button
         style={{
           background: "#9F94FF",
-          width: "135px",
-          height: "40px",
+          width: "125px",
+          height: "35px",
           borderRadius: "20px",
           border: "none",
           margin:'5px 15px 15px auto',
           fontSize: "17px",
           flexShrink:'0',
           textAlign:'left',
-          paddingLeft:'20px'
+          paddingLeft:'30px'
         }}
       >
         {item}

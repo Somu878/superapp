@@ -17,7 +17,7 @@ function Notes() {
         marginLeft:'-385px',
         borderRadius:'20px'
     }}>
-        <div style={{padding:'30px',fontSize:'25px',fontWeight:'600'}}  >All notes</div>
+        <div style={{padding:'30px',fontSize:'25px',fontWeight:'600',}}  >All notes</div>
         <textarea onChange={(e)=>SaveNotes(e)} style={{width:'21vw',height:'45vh',marginLeft:'30px',marginRight:'20px',outline:'0',background:'transparent',border:'none',color:'black',fontSize:'16px',fontFamily:'var(--dmsans)',resize:'none'}} spellCheck={false} value={savetext} placeholder='Write your note here..'></textarea>
     </div>
   )
